@@ -211,7 +211,7 @@ namespace Leedong.MergeGame
             {
                 BlockInfo info = blockInfos[i];
 
-                Block block = (Instantiate(Resources.Load("Block"), _blocks.transform) as GameObject).GetComponent<Block>();
+                Block block = (Instantiate(Resources.Load("MergeGame/Block"), _blocks.transform) as GameObject).GetComponent<Block>();
                 block.SetBlockType(info.type, _blockSprites[info.type]);
                 block.transform.position = GetCellToWorld(info.tilePosition);
 
