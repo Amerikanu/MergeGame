@@ -28,4 +28,4 @@ C# 스크립트는 자유롭게 사용 가능합니다.
 
 ## Contact
 
-E-mail : <b>qwe808bn@naver.com</b>
+Email : <b>qwe808bn@naver.com</b>
