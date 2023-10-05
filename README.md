@@ -54,8 +54,7 @@
 
 ## Reference
 
-- Resources : https://kenney.nl/
-- gitignore : https://github.com/github/gitignore/blob/main/Unity.gitignore
+- 2D Resources : https://kenney.nl/
 
 ## License
 
