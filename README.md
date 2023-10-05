@@ -1,6 +1,6 @@
 <!-- https://github.com/TereaGreen -->
 
-# Merge Game
+## About
 
 유니티 엔진으로 개발한 머지 게임 샘플 프로젝트입니다.
 <br>
@@ -27,41 +27,35 @@
 
 ![mergegamehexagon](https://github.com/TereaGreen/MergeGame/assets/80702114/6e25caf0-43d2-4314-9b0e-fede3cdad5f7)
 
-# Development
+## Info
 
-2D 그리드 타일맵을 사용했습니다.
-<br>
-Dictionary의 Key를 블록의 타일맵 위치값(Vector3Int), Value를 블록(Class)으로 두어 Dictionary의 변경에 따라 타일맵 상태가 변경되는 방향으로 개발했습니다.
-<br><br>
-터치 이벤트의 위치 좌표를 타일맵 좌표로 변환합니다. 드래그 이벤트 위치값이 다운 이벤트 위치값 기준으로 상하좌우 위치에 있을 때 블록의 위치가 변경되는 이벤트가 발생하고 터치 입력을 비활성화합니다.
-<br>
-블록의 위치가 변경된 상태를 기준으로 머지가 가능한 블록을 머지 리스트에 추가합니다. 머지 리스트에 요소가 있으면 반복 이벤트가 발생하고, 없으면 변경된 두 블록의 위치가 다시 제자리로 돌아갑니다.
-<br><br>
-반복 이벤트
-<br>
-1. 머지 리스트에 요소가 없으면 반복을 종료하고 터치 입력을 활성화합니다.
-2. 머지 리스트에 요소가 있는 경우 리스트에 포함된 블록들이 사라지며 빈자리에 블록이 채워지고 새로운 블록이 생성됩니다.
-3. 블록의 위치가 변경된 상태를 기준으로 머지가 가능한 블록을 머지 리스트에 추가합니다. 1번으로 돌아갑니다.
+<table>
+    <tr>
+        <td>엔진</td>
+        <td>Unity Engine</td>
+    </tr>
+    <tr>
+        <td>에디터 버전</td>
+        <td>2021.3.28f1</td>
+    </tr>
+    <tr>
+        <td>템플릿</td>
+        <td>2D</td>
+    </tr>
+    <tr>
+        <td>플랫폼</td>
+        <td>Windows, Android, iOS</td>
+    </tr>
+    <tr>
+        <td>개발 인원</td>
+        <td>1인</td>
+    </tr>
+</table>
 
-육각형 머지 게임은 사각형 머지 게임 스크립트를 상속받아 구현했습니다.
-<br><br>
-육각형 머지 게임은 상하좌우 방향이 아닌 상, 우상단, 우하단, 좌상단, 좌하단, 하 총 6개의 방향이 있습니다.
-<br>
-육각형 머지 게임은 사각형 머지 조건과 함께 4개의 같은 타입의 블록이 서로 맞닿아 있는 조건이 추가됩니다.
-<br><br>
-사각형 타일은 Vector3Int 위치값을 Vector3 위치값으로 변환했을 때 타일의 좌하단을 중심으로 하고, 육각형 타일은 중앙을 중심으로 합니다.
-<br>
-따라서 사각형 타일은 Vector3 값으로 변환할 때 x와 y의 위치값이 0.5씩 추가됩니다.
+## Reference
 
-## Unity
-
-에디터 버전 : 2021.3.28f1
-<br>
-템플릿 : 2D
-
-## Resource
-
-게임에 사용된 이미지 리소스는 <b>https://kenney.nl/</b> 를 이용했습니다.
+- Resources : https://kenney.nl/
+- gitignore : https://github.com/github/gitignore/blob/main/Unity.gitignore
 
 ## License
 
@@ -72,5 +66,6 @@ Dictionary의 Key를 블록의 타일맵 위치값(Vector3Int), Value를 블록(
 ## Contact
 
 질문, 버그, 피드백 등은 아래 이메일로 연락 부탁드립니다.
+<br>
 - Naver : <b>qwe808bn@naver.com</b>
 - Gmail : <b>qwe808bn@gmail.com</b>
