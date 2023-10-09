@@ -31,8 +31,8 @@
 
 <table>
     <tr>
-        <td>엔진</td>
-        <td>Unity Engine</td>
+        <td width="150">엔진</td>
+        <td width="300">Unity Engine</td>
     </tr>
     <tr>
         <td>에디터 버전</td>
@@ -51,10 +51,6 @@
         <td>1인</td>
     </tr>
 </table>
-
-## Reference
-
-- 2D Resources : https://kenney.nl/
 
 ## License
 
