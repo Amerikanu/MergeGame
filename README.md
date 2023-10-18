@@ -1,4 +1,4 @@
-<!-- https://github.com/TereaGreen -->
+<!-- https://github.com/Amerikanu -->
 
 ## About
 
@@ -62,5 +62,4 @@
 
 질문, 버그, 피드백 등은 아래 이메일로 연락 부탁드립니다.
 <br>
-- Naver : <b>qwe808bn@naver.com</b>
-- Gmail : <b>qwe808bn@gmail.com</b>
+- Gmail : <b>dhe808b@gmail.com</b>
