@@ -244,10 +244,10 @@ namespace Leedong.MergeGame
 
         private void BlockEvent(Vector3Int downPosition, Vector3Int dragPosition)
         {
-            StartCoroutine(IBlockEvent(downPosition, dragPosition));
+            StartCoroutine(StartBlockEvent(downPosition, dragPosition));
         }
 
-        private IEnumerator IBlockEvent(Vector3Int downPosition, Vector3Int dragPosition)
+        private IEnumerator StartBlockEvent(Vector3Int downPosition, Vector3Int dragPosition)
         {
             _tilemapBlocks[downPosition].SetRendererOrder(3);
             _tilemapBlocks[dragPosition].SetRendererOrder(2);
@@ -256,17 +256,17 @@ namespace Leedong.MergeGame
 
             FindMergeBlocks();
 
-            yield return StartCoroutine(IMoveBoth(_tilemapBlocks[downPosition], _tilemapBlocks[dragPosition]));
+            yield return StartCoroutine(StartMoveBoth(_tilemapBlocks[downPosition], _tilemapBlocks[dragPosition]));
 
             if (_mergePositions.Count > 0)
             {
-                yield return StartCoroutine(IBlockLoopEvent());
+                yield return StartCoroutine(StartBlockLoopEvent());
             }
             else
             {
                 BlockChange(downPosition, dragPosition);
 
-                yield return StartCoroutine(IMoveBoth(_tilemapBlocks[downPosition], _tilemapBlocks[dragPosition]));
+                yield return StartCoroutine(StartMoveBoth(_tilemapBlocks[downPosition], _tilemapBlocks[dragPosition]));
             }
 
             _canInput = true;
@@ -331,7 +331,7 @@ namespace Leedong.MergeGame
 
 #region Loop : Pop -> Create New Blocks & Move -> Find Merge Blocks
 
-        private IEnumerator IBlockLoopEvent()
+        private IEnumerator StartBlockLoopEvent()
         {
             while (true)
             {
@@ -353,7 +353,7 @@ namespace Leedong.MergeGame
 
                 List<Block> popBlocks = _queueBlocks.ToList();
 
-                yield return StartCoroutine(IPopBlocks(popBlocks));
+                yield return StartCoroutine(StartPopBlocks(popBlocks));
 
 #endregion
 
@@ -370,7 +370,7 @@ namespace Leedong.MergeGame
                     {
                         Vector3 targetPosition = GetCellToWorld(_targetPositions[i]);
 
-                        StartCoroutine(IMove(_tilemapBlocks[_targetPositions[i]], targetPosition));
+                        StartCoroutine(StartMove(_tilemapBlocks[_targetPositions[i]], targetPosition));
                     }
 
                     // Create New Block
@@ -397,7 +397,7 @@ namespace Leedong.MergeGame
                             Vector3 creationPosition = GetCellToWorld(dropPosition);
                             dropBlock.transform.position = creationPosition + Vector3.up;
 
-                            moveCoroutines[i] = StartCoroutine(IMove(dropBlock, creationPosition));
+                            moveCoroutines[i] = StartCoroutine(StartMove(dropBlock, creationPosition));
                         }
                     }
 
@@ -508,7 +508,7 @@ namespace Leedong.MergeGame
 #region Animation
 
         // 블록 이동
-        private IEnumerator IMove(Block block, Vector3 targetPosition)
+        private IEnumerator StartMove(Block block, Vector3 targetPosition)
         {
             float distance = Vector3.Distance(block.transform.position, targetPosition);
             float speed = ANIM_SPEED_TIME * distance;
@@ -528,7 +528,7 @@ namespace Leedong.MergeGame
         }
 
         // 두 블록의 위치를 서로 변경
-        private IEnumerator IMoveBoth(Block downBlock, Block dragBlock)
+        private IEnumerator StartMoveBoth(Block downBlock, Block dragBlock)
         {
             Vector3 targetPositionA = downBlock.transform.position;
             Vector3 targetPositionB = dragBlock.transform.position;
@@ -553,7 +553,7 @@ namespace Leedong.MergeGame
         }
 
         // 블록 제거
-        private IEnumerator IPopBlocks(List<Block> popBlocks)
+        private IEnumerator StartPopBlocks(List<Block> popBlocks)
         {            
             for (int i = 0; i < popBlocks.Count; i++)
             {

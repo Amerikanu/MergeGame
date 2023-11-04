@@ -39,10 +39,10 @@ namespace Leedong.MergeGame
 
         public void Pop()
         {
-            StartCoroutine(IPop());
+            StartCoroutine(StartPop());
         }
 
-        private IEnumerator IPop()
+        private IEnumerator StartPop()
         {
             float scale = 1f;
 
