@@ -1,4 +1,4 @@
-<!-- https://github.com/Donground/MergeGame -->
+<!-- https://github.com/leedonglee/MergeGame -->
 
 ## About
 
